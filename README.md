@@ -54,14 +54,11 @@ Nếu muốn chạy script trực tiếp, xem [hướng dẫn runtime](skills/co
 
 Bộ kiểm tra dùng thư mục tạm riêng trong repository, không sửa settings thật và không khởi chạy Codex. Nó kiểm tra phân loại media, tính lặp lại của preset, backup, giữ nguyên xác nhận debug, từ chối schema lạ và `-WhatIf`. Chạy thử một nền trong Codex thật vẫn là bước kiểm chứng riêng.
 
-## Đưa lên GitHub
-
-Toàn bộ thư mục này là nội dung repository. Tạo repository trống trên GitHub rồi upload nội dung, hoặc dùng Git theo quy trình của bạn. Không upload thư mục dữ liệu thật của Codex/Backdrop, thư mục `work`, video người dùng hay các bản sao lưu settings.
 
 ## Nguồn và giấy phép
 
 - Scripts và nội dung skill trong repository này: [MIT](LICENSE).
 - [Backdrop for Codex](https://github.com/TogawaSakiko-desuwa/backdrop-for-codex): dependency độc lập, Apache-2.0; giữ nguyên giấy phép/notice khi sử dụng bản tải về.
-- [ClaudeSkin](https://github.com/khoyga007/ClaudeSkin): tham khảo ý tưởng theme runtime có thể hoàn tác. Gói này không chứa mã injector hay theme của ClaudeSkin.
+
 
 Không có quan hệ tài trợ, chứng nhận hay liên kết chính thức với OpenAI, Anthropic hoặc các dự án upstream. Xem [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
