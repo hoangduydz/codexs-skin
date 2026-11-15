@@ -1,0 +1,15 @@
+# Local execution/test artifacts and private media
+work/
+.test-work/
+engine/
+CodexSkinMedia/
+settings.json
+settings.before-*.json
+ui-settings.json
+*.log
+*.tmp
+*.mp4
+*.webm
+*.exe
+*.dll
+*.zip

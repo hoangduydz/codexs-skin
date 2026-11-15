@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex Skin"
+  short_description: "Local image and video themes for Codex on Windows"
+  default_prompt: "Use $codex-skin to create and apply a Codex desktop wallpaper theme from my chosen local image or video."
