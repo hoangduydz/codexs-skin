@@ -7,6 +7,8 @@ Skill cho **Codex desktop trên Windows 11**: chuẩn bị nền ảnh hoặc vi
 ## Có gì trong gói?
 
 - Chọn ảnh PNG/JPEG/WebP hoặc video MP4/WebM của bạn.
+- Thiết kế bảng màu đồng bộ từ artwork, với gợi ý màu accent/nền/chữ và cách căn điểm lấy nét.
+- Ghép nền với Appearance gốc của Codex; các giá trị palette là gợi ý để áp dụng trong Settings, không phải file theme để import.
 - Tạo/cập nhật preset, giữ các profile khác và sao lưu settings trước khi thay thế.
 - Tải Backdrop v1.5.3 từ GitHub Releases, kiểm tra SHA-256 trước khi giải nén.
 - Khởi chạy thông thường hoặc chờ người dùng thoát Codex để mở bằng chế độ có nền.
@@ -35,7 +37,7 @@ Dùng $codex-skin để làm theme Codex với video D:\Wallpapers\night.mp4,
 tông tối, panel bán trong suốt. Kiểm tra nền thật sau khi khởi chạy.
 ```
 
-Nếu muốn chạy script trực tiếp, xem [hướng dẫn runtime](skills/codex-skin/references/runtime.md).
+Nếu muốn chạy script trực tiếp, xem [hướng dẫn runtime](skills/codex-skin/references/runtime.md). Cách phối màu và căn ảnh nằm trong [hướng dẫn thiết kế theme](skills/codex-skin/references/theme-design.md).
 
 ## Yêu cầu và giới hạn
 
@@ -59,6 +61,6 @@ Bộ kiểm tra dùng thư mục tạm riêng trong repository, không sửa set
 
 - Scripts và nội dung skill trong repository này: [MIT](LICENSE).
 - [Backdrop for Codex](https://github.com/TogawaSakiko-desuwa/backdrop-for-codex): dependency độc lập, Apache-2.0; giữ nguyên giấy phép/notice khi sử dụng bản tải về.
-
+- [Antigravity Custom Theme Skill](https://github.com/giakiet22102006/antigravity-custom-theme-skill): tham khảo cách phối bảng màu tổng thể theo artwork. Gói này không chứa mã, DOM selector, daemon, hay asset từ dự án đó; tính năng engine của họ chỉ dành cho Antigravity.
 
 Không có quan hệ tài trợ, chứng nhận hay liên kết chính thức với OpenAI, Anthropic hoặc các dự án upstream. Xem [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).

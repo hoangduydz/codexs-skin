@@ -7,13 +7,15 @@ description: Create and apply local image or looping video wallpaper themes to t
 
 Make a theme for the user's existing Codex desktop app using a local image or video and a reversible companion. This skill targets Windows 11 x64 and the official Store/MSIX Codex app. It does not patch the application package.
 
+Read [references/theme-design.md](references/theme-design.md) before designing a requested theme. Design a coherent palette from the chosen artwork and pair it with Codex's built-in Appearance controls. Keep the wallpaper layer (Backdrop) and native app color theme (Codex Appearance) as distinct settings; the native controls are the supported way to change accent, background, foreground, fonts, and sidebar translucency. Never imitate Antigravity's DOM selectors, overlays, or daemon in Codex.
+
 ## Select the media and appearance
 
 Use the user's supplied file or visual reference. Respect a request for animation: a PNG or JPG is not an animated wallpaper. If only a still image is available, explain whether the planned result is a moving composition or a genuinely animated character. Do not claim that a still image will blink or move by itself.
 
 For screen recordings, extract only a clean wallpaper segment; exclude desktop icons, chat text, loading marks, and window controls where possible. When a clean original cannot be recovered, disclose the limitation. FFmpeg may trim, encode, or loop video; image generation/editing should use the image tools available in the current environment. Do not redistribute a user's artwork or recordings as part of this skill.
 
-Choose panel opacity and overlays for readable text. The current companion accepts panel opacity 0.60–0.95 and blur 0–24 px. A dark artwork generally works best with Codex's Dark appearance. Do not replace the user's media with a generic preset without their agreement.
+Choose panel opacity and overlays for readable text. The current companion accepts panel opacity 0.60–0.95 and blur 0–24 px. Recommend a matching light/dark mode and accent/background/foreground values from the artwork, then apply them through Settings > Appearance only when the interface allows it; otherwise give the user the values and steps. Do not claim a manual native setting changed unless it was observed. Do not replace the user's media with a generic preset without their agreement.
 
 ## Prepare and apply
 
@@ -22,7 +24,7 @@ Run the bundled scripts using their absolute paths; quote paths and pass user te
 1. Run `scripts/Get-ThemeStatus.ps1` to inspect the OS, Codex package version, companion state, and presence of debug flags. This is read-only and does not inspect chats or credentials. Stop on an unsupported platform.
 2. If the companion is missing, run `scripts/Install-Engine.ps1`. It downloads the pinned upstream release and verifies both a pinned SHA-256 and the release checksum before extracting it. Do not substitute an unverified binary.
 3. Exit Backdrop before editing its settings. Run `scripts/Set-Wallpaper.ps1 -MediaPath <absolute-file> -Name <theme-name>` with any chosen appearance options. It copies media into local application data, preserves unrelated profiles and the existing risk acknowledgement, and backs up settings before replacing them. It never sets that acknowledgement to true.
-4. Show the resulting media/preset for review. If Codex is already running normally, do not report the theme as applied. Start with `scripts/Start-Theme.ps1`; for an intentional restart handoff, `-WaitForExit` waits at most 30 minutes for the user to exit Codex, then starts the companion once. Do not kill Codex or create persistent startup jobs.
+4. Show the palette recommendations and resulting media/preset for review. If Codex is already running normally, do not report the wallpaper as applied. Start with `scripts/Start-Theme.ps1`; for an intentional restart handoff, `-WaitForExit` waits at most 30 minutes for the user to exit Codex, then starts the companion once. Do not kill Codex or create persistent startup jobs.
 5. Let the user read and handle the companion's own debugger disclosure. The engine communicates through local CDP, which is a privileged debugging interface. Do not automate this acknowledgement or weaken CSP/endpoint checks to force a theme to load.
 6. Verify the actual Codex window after launch when the environment permits. A companion preview, saved JSON, or successful process launch alone does not prove that the theme is active. For a video, verify motion as well as visibility. Report separately: media prepared, preset saved, companion launched, and actual wallpaper verified.
 
